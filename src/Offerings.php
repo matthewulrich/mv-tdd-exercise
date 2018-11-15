@@ -3,14 +3,15 @@ namespace App;
 
 class Offerings
 {
-    private $max_investments = 10;
+    private $maxInvestments = 10;
     private $name;
 
-    public function __construct(string $name)
+    public function __construct(string $name, int $maxInvestments)
     {
         // $this->ensureIsValidOffering($name);
 
         $this->name = $name;
+        $this->max_investments = $maxInvestments;
 
     }
 
