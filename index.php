@@ -12,7 +12,7 @@
 
     echo $investor->getApproved() . "\n";
 
-    $investor->setApproved(1);
+    $investor->setApproved();
 
     echo $investor->getApproved() . "\n";
 

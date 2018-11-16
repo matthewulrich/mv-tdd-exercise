@@ -17,8 +17,8 @@ class Investor
         $this->email = $email;
     }
 
-    public function setApproved(int $state) {
-        $this->approved = $state;
+    public function setApproved() {
+        $this->approved = 1;
     }
 
     public function getFirstName() {
@@ -50,5 +50,4 @@ class Investor
 
         return $sum;
     }
-
 }
