@@ -108,6 +108,23 @@ class SimpleTest extends TestCase
         $this->assertEquals($approved, $expectedApproved);
     }
 
+    // Test Investor is approved before making an investment
+    public function testInvestorApprovedBeforeMakingInvestment()
+    {
+
+        $offering = new Offering('Offering 1', 10);
+
+        $investor = new Investor('John', 'Smith', 'john@example.com');
+
+        $investment = new Investment(1000, 'credit card', $offering, $investor);
+
+        $investor = $investment->getInvestor();
+
+        print_r($investor);
+
+        $this->assertFalse($investor);
+    }
+
     // Test to get the total dollars invested by an investor
     public function testTotalDollarsInvested()
     {

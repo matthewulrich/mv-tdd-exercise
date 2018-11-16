@@ -14,10 +14,10 @@ class Investment {
         $this->amount = $amount;
         $this->paymentMethod = $paymentMethod;
 
-        $this->offering = $offering;
-        $this->investor = $investor;
-
         if ($investor->getApproved() === 1) {
+            $this->offering = $offering;
+            $this->investor = $investor;
+            
             $offering->addInvestment($this);
             $investor->addInvestment($this);
         }
@@ -32,10 +32,10 @@ class Investment {
     }
 
     public function getOffering() {
-        return $this->offering;
+        return $this->offering ?? false;
     }
 
     public function getInvestor() {
-        return $this->investor;
+        return $this->investor ?? false;
     }
 }
